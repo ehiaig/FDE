@@ -1,0 +1,6 @@
+.venv/
+fde_rag/
+__pycache__/
+*.pyc
+data/
+.env

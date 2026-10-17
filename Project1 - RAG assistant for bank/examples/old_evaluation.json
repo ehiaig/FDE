@@ -1,0 +1,6 @@
+[
+  {"question": "How many days of annual leave do full-time employees receive?", "contains": ["25"], "sources": ["leave-policy.md"]},
+  {"question": "Who must approve annual leave requests?", "contains": ["manager"], "sources": ["leave-policy.md"]},
+  {"question": "How should employees report phishing emails?", "contains": ["Report Phishing"], "sources": ["incident-policy.md"]},
+  {"question": "What is the bank's mortgage interest rate?", "abstain": true}
+]

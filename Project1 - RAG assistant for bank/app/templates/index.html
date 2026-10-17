@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bank knowledge assistant</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<header><div class="brand"><span class="mark">B</span><div>Bank knowledge<span class="sub">Your internal policy assistant</span></div></div><div id="identity" hidden><span id="user-label"></span><button id="logout" class="secondary">Sign out</button></div></header>
+<main>
+<section id="login-panel" class="login card">
+<p class="eyebrow">EMPLOYEE WORKSPACE</p><h1>Knowledge, with the right access.</h1><p class="muted">Sign in to ask questions and explore the documents available to your role.</p>
+<form id="login-form"><label for="username">Username</label><input id="username" name="username" autocomplete="username" required><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required><button type="submit">Sign in</button></form>
+<p id="login-status" class="status" role="status"></p><p class="hint">Local demo · Use the admin or employee credentials in the README.</p>
+</section>
+<section id="workspace" hidden>
+<div class="intro"><p class="eyebrow">KNOWLEDGE WORKSPACE</p><h1>Ask your documents.</h1><p class="muted">Answers grounded in your policies, with sources you can verify.</p></div>
+<div class="layout">
+<aside>
+<section id="upload-panel" class="card" hidden><h2>Add a document</h2><p class="muted">Choose who can use this PDF in answers.</p><form id="upload-form"><label for="pdf">PDF document</label><input type="file" id="pdf" name="file" accept=".pdf,application/pdf" required><label for="access">Document access</label><select id="access" name="access"><option value="admin">Admin only</option><option value="all">All access</option></select><button type="submit">Upload & index</button></form><p class="hint">Text-based PDFs · Up to 20 MB</p><p id="upload-status" class="status" role="status"></p></section>
+<section class="card"><div class="section-heading"><h2>Your documents</h2><button id="refresh" class="secondary">Refresh</button></div><p class="muted">Only documents available to your role appear here.</p><ul id="documents" class="documents"></ul><p id="document-status" class="status" role="status"></p></section>
+</aside>
+<section class="card chat"><div class="section-heading"><h2>Policy assistant</h2><span class="pill">Cited answers</span></div><div id="conversation" aria-live="polite"><div id="empty-chat" class="empty"><div class="question-icon">?</div><h3>What would you like to know?</h3><p>Ask a specific question about an uploaded policy.<br>We'll show the answer and its supporting excerpts.</p></div></div><form id="ask-form"><label for="question">Your question</label><textarea id="question" name="question" rows="3" maxlength="4000" placeholder="What is our annual leave allowance?" required></textarea><div class="composer-footer"><span class="hint">Your role controls which sources can be used.</span><button type="submit">Ask question →</button></div></form><p id="ask-status" class="status" role="status"></p></section>
+</div>
+<section id="quality-panel" class="card quality" hidden>
+<div class="section-heading"><h2>Feedback & evaluation</h2><button id="review-refresh" class="secondary">Load feedback</button></div>
+<p class="muted">Review reported answers, write the expected result, then test the question as either user. Expected answers are human-reviewed, never generated automatically.</p>
+<div id="review-list"></div>
+<div class="section-heading"><h3>Reviewed test cases</h3><button id="run-evaluations">Run saved cases</button></div>
+<div id="evaluation-cases"></div><p id="quality-status" class="status" role="status"></p>
+</section>
+</section>
+</main><footer>Bank knowledge assistant · Local RBAC demo</footer>
+</body></html>

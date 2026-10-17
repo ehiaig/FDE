@@ -1,0 +1,70 @@
+# Shared rules apply at every project depth.
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local secrets (keep configuration templates)
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Python environments and generated files
+.venv/
+venv/
+env/
+fde_rag/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# JavaScript dependencies and build caches
+node_modules/
+.next/
+.nuxt/
+.turbo/
+.vite/
+*.tsbuildinfo
+
+# Generated build output
+build/
+dist/
+coverage/
+
+# Runtime data, uploaded documents, local databases and logs.
+# Keep versioned sample documents and evaluation cases under examples/ or fixtures/.
+data/
+uploads/
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite*-shm
+*.sqlite*-wal
+*.sqlite*-journal
+logs/
+*.log
+
+# Local deployment state
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.vercel/
+
+# Editor temporary files
+*.swp
+*.swo
+*~
