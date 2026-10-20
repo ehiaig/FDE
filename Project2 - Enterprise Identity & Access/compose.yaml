@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: bridge
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD for the database owner}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - bridge-data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d bridge"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+volumes:
+  bridge-data:
